@@ -1,0 +1,42 @@
+[
+    {
+        "_id": "B001",
+        "title": "Introduction to Algorithms",
+        "author": "Thomas H. Cormen",
+        "category": "Engineering",
+        "status": "available",
+        "borrowHistory": []
+    },
+    {
+        "_id": "B002",
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "category": "Engineering",
+        "status": "available",
+        "borrowHistory": []
+    },
+    {
+        "_id": "B003",
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "category": "Fiction",
+        "status": "available",
+        "borrowHistory": []
+    },
+    {
+        "_id": "B004",
+        "title": "Database System Concepts",
+        "author": "Abraham Silberschatz",
+        "category": "Engineering",
+        "status": "available",
+        "borrowHistory": []
+    },
+    {
+        "_id": "B005",
+        "title": "Sapiens",
+        "author": "Yuval Noah Harari",
+        "category": "Non-Fiction",
+        "status": "available",
+        "borrowHistory": []
+    }
+]
