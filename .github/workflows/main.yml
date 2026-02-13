@@ -4,19 +4,29 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    
+    # Setup MongoDB Service
     services:
       mongodb:
         image: mongo:latest
         ports:
           - 27017:27017
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           extensions: mongodb
+          tools: composer
+
       - name: Install dependencies
-        run: composer install
+        # This flag fixes the "wrong version installed (2.1.4)" error
+        run: composer install --ignore-platform-reqs
+
       - name: Run Autograder
+        # This runs the PHPUnit tests and reports the result to GitHub
         run: ./vendor/bin/phpunit tests/LibraryTest.php
