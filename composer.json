@@ -1,6 +1,6 @@
 {
-    "name": "yourname/library-app",
-    "description": "E-Library MongoDB App",
+    "name": "student/library-app",
+    "description": "MongoDB Library App Autograding Task",
     "require": {
         "mongodb/mongodb": "^1.16"
     },
@@ -15,6 +15,7 @@
     "config": {
         "allow-plugins": {
             "php-http/discovery": true
-        }
+        },
+        "platform-check": false
     }
 }
