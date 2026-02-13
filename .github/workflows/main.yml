@@ -5,7 +5,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    # Setup MongoDB Service
     services:
       mongodb:
         image: mongo:latest
@@ -20,13 +19,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          extensions: mongodb
+          # Pinning the driver version solves the BSONArray Fatal Error
+          extensions: mongodb-1.16.0
           tools: composer
 
       - name: Install dependencies
-        # This flag fixes the "wrong version installed (2.1.4)" error
-        run: composer install --ignore-platform-reqs
+        run: composer install
 
       - name: Run Autograder
-        # This runs the PHPUnit tests and reports the result to GitHub
         run: ./vendor/bin/phpunit tests/LibraryTest.php
