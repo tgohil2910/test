@@ -1,0 +1,22 @@
+name: Autograding
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mongodb
+      - name: Install dependencies
+        run: composer install
+      - name: Run Autograder
+        run: ./vendor/bin/phpunit tests/LibraryTest.php
