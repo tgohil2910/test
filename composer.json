@@ -1,11 +1,11 @@
 {
     "name": "student/library-app",
-    "description": "MongoDB Library App Autograding Task",
+    "description": "E-Library MongoDB Task",
     "require": {
         "mongodb/mongodb": "^1.16"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.0"
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "classmap": [
@@ -15,7 +15,6 @@
     "config": {
         "allow-plugins": {
             "php-http/discovery": true
-        },
-        "platform-check": false
+        }
     }
 }
